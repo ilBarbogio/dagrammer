@@ -1,0 +1,11 @@
+{
+  "name": "dagrammer",
+  "version": "1.0.0",
+  "description": "A little vector drawing tool, with Origami in mind",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carminati Alberto",
+  "license": "ISC"
+}
