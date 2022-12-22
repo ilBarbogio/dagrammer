@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/main.js":
+/***/ "./src/main.ts":
 /*!*********************!*\
-  !*** ./src/main.js ***!
+  !*** ./src/main.ts ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_controls_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/controls.js */ \"./src/scripts/controls.js\");\n\n\nconst can=document.querySelector(\"#main-canvas\")\nconst ctx=can.getContext(\"2d\")\n\nconst width=400\nconst height=400\n\nfunction setupCanvas(){\n  can.width=width\n  can.height=height\n}\n\nsetupCanvas()\n_scripts_controls_js__WEBPACK_IMPORTED_MODULE_0__.setupListeners(can)\n\n//# sourceURL=webpack://dagrammer/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scripts_controls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/controls */ \"./src/scripts/controls.ts\");\n\nvar can = document.querySelector(\"#main-canvas\");\nvar ctx = can.getContext(\"2d\");\nvar width = 400;\nvar height = 400;\nfunction setupCanvas() {\n    can.width = width;\n    can.height = height;\n}\nsetupCanvas();\n_scripts_controls__WEBPACK_IMPORTED_MODULE_0__.setupListeners(can);\n\n\n//# sourceURL=webpack://dagrammer/./src/main.ts?");
 
 /***/ }),
 
-/***/ "./src/scripts/controls.js":
+/***/ "./src/scripts/controls.ts":
 /*!*********************************!*\
-  !*** ./src/scripts/controls.js ***!
+  !*** ./src/scripts/controls.ts ***!
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"setupListeners\": () => (/* binding */ setupListeners)\n/* harmony export */ });\nconst setupListeners=(element)=>{\n  element.addEventListener(\"pointerdown\",ev=>{\n    console.log(\"POINTER DOWN\")\n    console.log(ev)\n  })\n}\n\n//# sourceURL=webpack://dagrammer/./src/scripts/controls.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"setupListeners\": () => (/* binding */ setupListeners)\n/* harmony export */ });\nfunction getCoords(ev, element) {\n    var rect = element.getBoundingClientRect();\n    return [ev.clientX - rect.left, ev.clientY - rect.top];\n}\nvar setupListeners = function (element) {\n    element.addEventListener(\"pointerdown\", function (ev) {\n        console.log(\"POINTER DOWN\");\n        var _a = getCoords(ev, element), x = _a[0], y = _a[1];\n        console.log(\"START\", x, y);\n    });\n    element.addEventListener(\"pointerup\", function (ev) {\n        console.log(\"POINTER UP\");\n        var _a = getCoords(ev, element), x = _a[0], y = _a[1];\n        console.log(\"END\", x, y);\n    });\n    element.addEventListener(\"pointermove\", function (ev) {\n        console.log(\"POINTER MOVE\");\n        var _a = getCoords(ev, element), x = _a[0], y = _a[1];\n        console.log(\"MOVE\", x, y);\n    });\n};\n\n\n//# sourceURL=webpack://dagrammer/./src/scripts/controls.ts?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.ts");
 /******/ 	
 /******/ })()
 ;

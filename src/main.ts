@@ -1,6 +1,6 @@
-import * as CTRL from "./scripts/controls.js"
+import * as CTRL from "./scripts/controls"
 
-const can=document.querySelector("#main-canvas")
+const can:any=document.querySelector("#main-canvas")
 const ctx=can.getContext("2d")
 
 const width=400
