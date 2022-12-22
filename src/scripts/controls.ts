@@ -17,7 +17,7 @@ const pointers:pointerInfo[]=[
 ]
 
 export const setupListeners=(element:HTMLElement)=>{
-  element.addEventListener("touchstart",(ev:PointerEvent)=>{
+  element.addEventListener("pointerdown",(ev:PointerEvent)=>{
     console.log("POINTER DOWN",ev)
    // const [x,y]=getCoords(ev,element)
     //console.log("START",x,y)
